@@ -21,3 +21,49 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+#footer-input{
+  display: -webkit-flex;
+  display: flex;
+  width:100%;
+  .icon{
+    width:35px;
+    font-size: 25px;
+    padding-top: 4px;
+    padding-left: 5px;
+  }
+  label{
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+}
+
+#chat-list{
+  background:#e9ebed;
+  .card{
+    padding: 15px;
+    color:#222222;
+    margin-right:25px;
+    &.myself{
+      margin-right: 10px;
+      margin-left: 25px;
+      .by{
+        color:#4f8ef7;
+      }
+    }
+    .by{
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      line-height: 1em;
+      small{
+        color:#bbbbbb;
+      }
+    }
+    .message{
+      font-size: 14px;
+    }
+    img{
+      width:100%;
+    }
+  }
+}

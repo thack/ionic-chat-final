@@ -1,0 +1,18 @@
+<ion-view view-title="Sessions">
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="(dayIndex, day) in sessions">
+                <ion-item class="item-divider">
+                    {{day.day}}
+                </ion-item>
+                <ion-item ng-repeat="session in day.items" href="#/app/sessions/{{day}}{{session.id}}">
+                    <h2>{{session.title}}</h2>
+                    <p>
+                        {{session.time}}
+                        <span ng-if="session.time && session.author"> - </span> {{session.author}}
+                    </p>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
