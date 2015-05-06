@@ -59,12 +59,18 @@ angular.module('chat.controllers', [])
     };
 
     $scope.save = function (handle) {
-        // TODO: save user handle
+        localStorage.handle = $scope.handle = handle;
+        $scope.modal.hide();
     }
 
-    // TODO: create modal
+    $ionicModal.fromTemplateUrl('templates/account.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
 
     $scope.openModal = function () {
-        // TODO: show modal
+        $scope.modal.show();
     };
 });
