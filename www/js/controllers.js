@@ -48,6 +48,23 @@ angular.module('chat.controllers', [])
     };
 
     $scope.takePicture = function () {
+        $ionicActionSheet.show({
+            buttons: [
+                {
+                    text: 'Picture'
+                }, {
+                    text: 'Selfie'
+                }, {
+                    text: 'Saved Photo'
+                }
+            ],
+            titleText: 'Take a...',
+            cancelText: 'Cancel',
+            buttonClicked: function (index) {
+                ionic.Platform.isWebView() ? takeARealPicture(index) : takeAFakePicture();
+                return true;
+            }
+        });
 
         function takeARealPicture(cameraIndex) {
             // TODO: add $cordovaCamera.getPicture
