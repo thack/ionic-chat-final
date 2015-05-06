@@ -38,7 +38,7 @@ angular.module('chat.controllers', [])
     }
 
     function scrollBottom() {
-        // TODO: scroll delegate
+        $ionicScrollDelegate.$getByHandle('chat').scrollBottom();
     }
     $scope.posts.$watch(scrollBottom);
 
