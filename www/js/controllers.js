@@ -67,11 +67,28 @@ angular.module('chat.controllers', [])
         });
 
         function takeARealPicture(cameraIndex) {
-            // TODO: add $cordovaCamera.getPicture
+            var options = {
+                quality: 50,
+                sourceType: cameraIndex === 2 ? 2 : 1,
+                cameraDirection: cameraIndex,
+                destinationType: Camera.DestinationType.DATA_URL,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 500,
+                targetHeight: 600,
+                saveToPhotoAlbum: false
+            };
+            $cordovaCamera.getPicture(options).then(function (imageData) {
+                var photo = "data:image/jpeg;base64," + imageData;
+                addPost(null, photo);
+            }, function (err) {
+                // error
+                console.error(err);
+                takeAFakePicture();
+            });
         }
 
         function takeAFakePicture() {
-            // TODO: addPost
+            addPost(null, FakeCamera.getPicture());
         }
     };
 
