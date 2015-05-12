@@ -7,6 +7,10 @@
     * ``npm install -g cordova``
     * ``npm install -g bower``
 
+### Step By Step
+
+* https://github.com/thack/ionic-chat-final/releases
+
 ### Step 1
 
 * Create new project
