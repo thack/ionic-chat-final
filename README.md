@@ -66,6 +66,21 @@
     * ``ionic platform add android``
     * ``ionic build android``
 
+### Error?
+
+* Did you get this error?
+
+    ``[$injector:modulerr] Failed to instantiate module chat due to:``
+    ``[$injector:modulerr] Failed to instantiate module chat.services due to:``
+    ``[$injector:modulerr] Failed to instantiate module firebase due to:``
+    ``[$injector:nomod] Module 'firebase' is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.``
+    
+* Make sure you added the libraries:
+    * ``ionic add firebase``
+    * ``ionic add angularfire``
+    * ``ionic add moment``
+    * ``ionic add ngCordova``
+
 ### Debugging
 * Safari - Dev Tools
 * Chrome - Dev Tools
